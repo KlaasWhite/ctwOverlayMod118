@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.klaaswhite.ctwoverlay118.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  "PlayerListEntryMixin",
+    "ScoreboardMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

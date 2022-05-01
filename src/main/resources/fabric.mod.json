@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "ctwoverlay118",
+  "version": "${version}",
+  "name": "CtwOverlay118",
+  "description": "",
+  "authors": [
+    "KlaasWhite"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/CtwOverlay118/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.klaaswhite.ctwoverlay118.client.CtwOverlay118Client"
+    ],
+    "main": [
+      "me.klaaswhite.ctwoverlay118.CtwOverlay118"
+    ]
+  },
+  "mixins": [
+    "CtwOverlay118.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.1"
+  }
+}
