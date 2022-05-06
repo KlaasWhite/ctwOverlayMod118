@@ -29,6 +29,7 @@ public class ConnectGui extends LightweightGuiDescription {
         root.add(urlField, 0, 2, 8, 1);
 
         urlField.setText(CtwOverlay118Client.url);
+        urlField.setMaxLength(100);
 
         WButton urlButton = new WButton(new TranslatableText("Confirm"));
         root.add(urlButton, 10, 2, 3, 1);

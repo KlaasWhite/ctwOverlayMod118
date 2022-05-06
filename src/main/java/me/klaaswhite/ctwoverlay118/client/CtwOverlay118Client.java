@@ -1,6 +1,5 @@
 package me.klaaswhite.ctwoverlay118.client;
 
-import me.klaaswhite.ctwoverlay118.CharacterCheck;
 import me.klaaswhite.ctwoverlay118.gui.ConnectGui;
 import me.klaaswhite.ctwoverlay118.gui.ConnectScreen;
 import net.fabricmc.api.ClientModInitializer;
@@ -13,16 +12,12 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
-import me.klaaswhite.ctwoverlay118.StartStopHandler;
-
 import java.util.UUID;
-
-import static me.klaaswhite.ctwoverlay118.StartStopHandler.startOverlay;
 
 @Environment(EnvType.CLIENT)
 public class CtwOverlay118Client implements ClientModInitializer {
 
-    public static String url = "localhost:8080";
+    public static String url = "http://localhost:8080";
     public static boolean ctwMode = true;
     public static UUID[] knowPlayers;
     public static String gamePrivateId = "";

@@ -14,7 +14,7 @@ import java.util.Collection;
 public class Utility {
 
     public static String doApiCall(String endPoint, String data) throws IOException {
-        URL url = new URL(String.format("http://" + CtwOverlay118Client.url + "/api/mc/%s", endPoint));
+        URL url = new URL(String.format(CtwOverlay118Client.url + "/api/mc/%s", endPoint));
         HttpURLConnection con = (HttpURLConnection)url.openConnection();
         con.setRequestMethod("POST");
         con.setRequestProperty("Content-Type", "application/json");

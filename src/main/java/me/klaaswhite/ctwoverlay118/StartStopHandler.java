@@ -48,7 +48,7 @@ public class StartStopHandler {
                 }
                 Gson gson = new Gson();
                 final String json = gson.toJson(array);
-                System.out.println(json);
+//                System.out.println(json);
 
                 try {
                     String response = Utility.doApiCall(String.format("startGame/%s", client.player.getName().getString()), json);

@@ -38,12 +38,12 @@ public class PlayerListEntryMixin {
     public void setDisplayName(Text newName, CallbackInfo info) {
         try {
             if (CtwOverlay118Client.gamePrivateId != null && !CtwOverlay118Client.gamePrivateId.equals("") && CtwOverlay118Client.ctwMode) {
-                System.out.println("mixin setDisplayName Called");
+//                System.out.println("mixin setDisplayName Called");
                 MinecraftClient mc = MinecraftClient.getInstance();
                 Text oldName = this.displayName;
                 if (mc.player != null) {
                     if (newName == null || oldName == null) {
-                        System.out.println("text or old name was null");
+//                        System.out.println("text or old name was null");
 //                        mc.inGameHud.addChatMessage(MessageType.SYSTEM, new LiteralText("text or old name was null"), mc.player.getUuid());
 //                        mc.inGameHud.addChatMessage(MessageType.SYSTEM, new LiteralText("oldName: " + oldName), mc.player.getUuid());
 //                        mc.inGameHud.addChatMessage(MessageType.SYSTEM, new LiteralText("newName" + newName), mc.player.getUuid());
