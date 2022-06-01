@@ -17,7 +17,7 @@ import java.util.UUID;
 @Environment(EnvType.CLIENT)
 public class CtwOverlay118Client implements ClientModInitializer {
 
-    public static String url = "http://localhost:8080";
+    public static String url = "https://ctwoverlay.herokuapp.com";
     public static boolean ctwMode = true;
     public static UUID[] knowPlayers;
     public static String gamePrivateId = "";

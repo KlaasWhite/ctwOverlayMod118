@@ -25,4 +25,11 @@ public class ScoreboardMixin {
             TeamHandler.removePlayerFromTeam(playerName, team.getName());
         }
     }
+
+    @Inject(method = "removeTeam", at=@At("TAIL"))
+    private void removeTeam(Team team, CallbackInfo info){
+        if(CtwOverlay118Client.gamePrivateId != null && !CtwOverlay118Client.gamePrivateId.equals("")) {
+            TeamHandler.removeTeam(team.getName());
+        }
+    }
 }

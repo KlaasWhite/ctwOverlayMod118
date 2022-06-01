@@ -48,4 +48,11 @@ public class TeamHandler {
 //            Utility.doApiCall("removePlayerFromTeam", String.format("{\"name\": \"%s\", \"gameId\": \"%s\"}", name, CtwOverlay118Client.gamePrivateId));
         worker.start();
     }
+
+    public static void removeTeam(String teamName){
+        MinecraftClient client = MinecraftClient.getInstance();
+        Thread worker = new Thread(new SendApiCall("removeTeam", String.format("{\"team\": \"%s\", \"gameId\": \"%s\"}", teamName, CtwOverlay118Client.gamePrivateId)));
+//            Utility.doApiCall("removePlayerFromTeam", String.format("{\"name\": \"%s\", \"gameId\": \"%s\"}", name, CtwOverlay118Client.gamePrivateId));
+        worker.start();
+    }
 }
