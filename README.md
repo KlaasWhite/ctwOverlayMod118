@@ -10,7 +10,7 @@ When in game, the gui can be accessed with a set button (changeable in the contr
 The url should be set to https://ctwoverlay.herokuapp.com but that should be automatic.
 Before connecting the "ctw mode" can be set, this sets if the game displays and checks for ctw classes.
 
-Now the overlay can be accesed in obs on the url https://ctwoverlay.herokuapp.com/overlay/<your ingame name>.
+Now the overlay can be accesed in obs on the url https://ctwoverlay.herokuapp.com/overlay/(your ingame name).
 The updates are automatic but the server is hosted in a container that shuts of after a bit. 
 So if the classes and teams are not updating, refresh the browser source.
 
