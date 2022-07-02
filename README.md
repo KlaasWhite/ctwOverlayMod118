@@ -4,6 +4,7 @@ A mod to work with an obs overlay to show the teams and classes for blebi's Capt
 ## Installation
 1. Download the mod from https://github.com/KlaasWhite/ctwOverlayMod118/releases/tag/Releases
 2. Install the mod with fabric version 1.18.1
+3. Install fabric-api
 
 # Utilisation
 When in game, the gui can be accessed with a set button (changeable in the controls settings).
