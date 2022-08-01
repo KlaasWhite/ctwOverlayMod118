@@ -1,12 +1,10 @@
 package me.klaaswhite.ctwoverlay118.mixin;
 
 import com.mojang.authlib.GameProfile;
-import me.klaaswhite.ctwoverlay118.ClassHandler;
 import me.klaaswhite.ctwoverlay118.client.CtwOverlay118Client;
+import me.klaaswhite.ctwoverlay118.requests.SetPlayerClass;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.PlayerListEntry;
-import net.minecraft.network.MessageType;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -37,18 +35,12 @@ public class PlayerListEntryMixin {
     @Inject(method = "setDisplayName", at = @At("HEAD"))
     public void setDisplayName(Text newName, CallbackInfo info) {
         try {
-            if (CtwOverlay118Client.gamePrivateId != null && !CtwOverlay118Client.gamePrivateId.equals("") && CtwOverlay118Client.ctwMode) {
-//                System.out.println("mixin setDisplayName Called");
+            if (CtwOverlay118Client.privateGameId != null && !CtwOverlay118Client.privateGameId.equals("") && CtwOverlay118Client.ctwMode) {
                 MinecraftClient mc = MinecraftClient.getInstance();
                 Text oldName = this.displayName;
                 if (mc.player != null) {
-                    if (newName == null || oldName == null) {
-//                        System.out.println("text or old name was null");
-//                        mc.inGameHud.addChatMessage(MessageType.SYSTEM, new LiteralText("text or old name was null"), mc.player.getUuid());
-//                        mc.inGameHud.addChatMessage(MessageType.SYSTEM, new LiteralText("oldName: " + oldName), mc.player.getUuid());
-//                        mc.inGameHud.addChatMessage(MessageType.SYSTEM, new LiteralText("newName" + newName), mc.player.getUuid());
-                    } else {
-                        ClassHandler.displayNameChanged(oldName, newName, this.profile.getName());
+                    if (!(newName == null || oldName == null))  {
+                        SetPlayerClass.execute(oldName, newName, this.profile.getName());
                     }
                 }
             }
@@ -56,6 +48,4 @@ public class PlayerListEntryMixin {
             System.out.println(e);
         }
     }
-
-
 }
