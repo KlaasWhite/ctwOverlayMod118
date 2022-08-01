@@ -6,8 +6,8 @@ import me.klaaswhite.ctwoverlay118.client.CtwOverlay118Client;
 import me.klaaswhite.ctwoverlay118.runnables.SendApiCall;
 
 public class ResetPlayerTeam {
-    public static void execute(String playerName){
-        CtwOverlayResetPlayerTeamRequest request = new CtwOverlayResetPlayerTeamRequest(playerName, CtwOverlay118Client.privateGameId);
+    public static void execute(String playerName, String teamName){
+        CtwOverlayResetPlayerTeamRequest request = new CtwOverlayResetPlayerTeamRequest(playerName, CtwOverlay118Client.privateGameId, teamName);
         Thread worker = new Thread(new SendApiCall("ResetPlayerTeam", Utility.jsonIng(request)));
         worker.start();
     }

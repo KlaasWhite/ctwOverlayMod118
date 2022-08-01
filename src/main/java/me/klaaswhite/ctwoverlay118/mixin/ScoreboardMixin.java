@@ -24,7 +24,7 @@ public class ScoreboardMixin {
     @Inject(method = "removePlayerFromTeam", at = @At("TAIL"))
     private void removePlayerFromTeam(String playerName, Team team, CallbackInfo info) {
         if(CtwOverlay118Client.privateGameId != null && !CtwOverlay118Client.privateGameId.equals("")) {
-            ResetPlayerTeam.execute(playerName);
+            ResetPlayerTeam.execute(playerName, team.getName());
         }
     }
 
